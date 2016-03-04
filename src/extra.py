@@ -2,7 +2,6 @@ __author__ = 'juliewe'
 import math
 import matplotlib
 
-def myplot
 
 def minusmean(list):
     total=0.0

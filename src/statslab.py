@@ -1,5 +1,7 @@
 __author__ = 'juliewe'
 
+#a possible although not particularly elegant solution for lab 3 on stats
+
 import math
 import numpy as np
 import matplotlib.pyplot as plt
@@ -11,7 +13,7 @@ def getSampleLists():
     return(listA,listB)
 
 def sampling(xarray,yarray):
-
+    #return mean and standard error for two arrays
     xmean=np.mean(xarray)
     xstdev=np.std(xarray)
     xerror = xstdev/math.pow(len(xarray),0.5)
@@ -23,7 +25,7 @@ def sampling(xarray,yarray):
     return((xmean,xerror),(ymean,yerror))
 
 def diffmeans(xarray,yarray):
-
+    #Test the difference between two means
     xmean=np.mean(xarray)
     xstdev=np.std(xarray)
     xn=len(xarray)
@@ -49,7 +51,7 @@ def diffmeans(xarray,yarray):
         print "SIGNIFICANT"
 
 def meandiffs(xarray,yarray):
-
+    #paired sample test - test mean differences
     difflist=[]
     for (x,y) in zip(xarray,yarray):
         difflist.append(x-y)
@@ -69,11 +71,13 @@ def meandiffs(xarray,yarray):
         print "SIGNIFICANT"
 
 def fit(x,line):
+    #given a straight line, return the value of y for x
     y=x*line[0]+line[1]
     return y
 
 
 def myscatter(xs,ys,thisxlabel='',thisylabel='',thistitle='',c=''):
+    #display a scatter plot for the data in xs and ys
     xl=np.min(xs)-1
     yl=np.min(ys)-1
     yu=np.max(ys)+1
